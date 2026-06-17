@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable">
+
+  <Commands package="guidPkg">
+    <Groups>
+      <Group guid="guidCmdSet" id="grpEditorCtx" priority="0x100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidCmdSet" id="cmdOptimize" priority="0x0200" type="Button">
+        <Parent guid="guidCmdSet" id="grpEditorCtx" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <CommandName>OptimizeStruct</CommandName>
+          <ButtonText>Optimize Struct Field Order</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidCmdSet" id="cmdToggleLang" priority="0x0300" type="Button">
+        <Parent guid="guidCmdSet" id="grpEditorCtx" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <CommandName>ToggleLang</CommandName>
+          <ButtonText>Struct Optimizer: 中文/EN</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <KeyBindings>
+    <KeyBinding guid="guidCmdSet" id="cmdOptimize" editor="guidVSStd97" mod1="Control Alt" key1="R" />
+  </KeyBindings>
+
+  <Symbols>
+    <GuidSymbol name="guidPkg" value="{A23AE15F-6AA8-4A0E-BCE7-9C721A0F82CD}" />
+
+    <GuidSymbol name="guidCmdSet" value="{5F9F1D62-A9EE-4E0B-ADDE-4CEB27DC5435}">
+      <IDSymbol name="grpEditorCtx" value="0x1020" />
+      <IDSymbol name="cmdOptimize" value="0x0101" />
+      <IDSymbol name="cmdToggleLang" value="0x0102" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidVSStd97" value="{5efc7975-14bc-11cf-9b2b-00aa00573819}" />
+  </Symbols>
+</CommandTable>

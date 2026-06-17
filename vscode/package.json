@@ -1,0 +1,75 @@
+{
+    "name": "struct-layout-optimizer",
+    "displayName": "Struct Layout Optimizer",
+    "description": "Reorders C# struct fields for optimal memory layout, minimizing alignment padding.",
+    "version": "1.0.0",
+    "publisher": "as17514",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Formatters"
+    ],
+    "keywords": [
+        "csharp",
+        "struct",
+        "memory",
+        "optimization",
+        "alignment"
+    ],
+    "activationEvents": [],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "struct-layout-optimizer.optimize",
+                "title": "Optimize Struct Field Order"
+            },
+            {
+                "command": "struct-layout-optimizer.toggleLanguage",
+                "title": "Struct Optimizer: Toggle Language (EN/中文)"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "struct-layout-optimizer.optimize",
+                "key": "ctrl+alt+r",
+                "when": "editorTextFocus && editorLangId == 'csharp'"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "struct-layout-optimizer.optimize",
+                    "when": "editorLangId == 'csharp'",
+                    "group": "navigation"
+                },
+                {
+                    "command": "struct-layout-optimizer.toggleLanguage",
+                    "group": "navigation"
+                }
+            ]
+        },
+        "configuration": {
+            "title": "Struct Layout Optimizer",
+            "properties": {
+                "structLayoutOptimizer.language": {
+                    "type": "string",
+                    "default": "auto",
+                    "enum": ["auto", "en", "zh"],
+                    "description": "UI language: auto (follows VS Code locale), en (English), zh (Chinese)"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.85.0",
+        "typescript": "^5.3.0"
+    }
+}
