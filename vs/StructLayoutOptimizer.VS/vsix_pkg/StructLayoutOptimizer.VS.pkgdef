@@ -1,8 +1,0 @@
-[$RootKey$\Packages\{A23AE15F-6AA8-4A0E-BCE7-9C721A0F82CD}]
-@="StructLayoutOptimizer.VS.StructLayoutOptimizerPackage, StructLayoutOptimizer.VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
-"InprocServer32"="C:\\Windows\\System32\\mscoree.dll"
-"Class"="StructLayoutOptimizer.VS.StructLayoutOptimizerPackage"
-"CodeBase"="StructLayoutOptimizer.VS.dll"
-
-[$RootKey$\Menus\{5F9F1D62-A9EE-4E0B-ADDE-4CEB27DC5435}]
-@=""
