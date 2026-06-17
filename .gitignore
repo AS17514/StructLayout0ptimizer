@@ -1,0 +1,17 @@
+# Gradle
+build/
+.gradle/
+gradle-8.10/
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Distribution (generated on release)
+dist/

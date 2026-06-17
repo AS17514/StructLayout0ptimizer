@@ -1,0 +1,37 @@
+<idea-plugin>
+    <id>com.riderpludgemaker.struct-layout-optimizer</id>
+    <name>Struct Layout Optimizer</name>
+    <vendor url="https://github.com/riderpludgemaker">RiderPLudgeMaker</vendor>
+
+    <description><![CDATA[
+        Reorders C# struct fields to minimize memory padding caused by alignment.
+        Select a struct (or place the cursor inside it) and press Ctrl+Alt+R
+        to automatically reorder fields for optimal memory layout.
+    ]]></description>
+
+    <depends>com.intellij.modules.rider</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup
+            id="StructLayoutOptimizer"
+            displayType="BALLOON" />
+    </extensions>
+
+    <actions>
+        <action
+            id="StructLayoutOptimizer.ReorderStruct"
+            class="com.riderpludgemaker.structoptimizer.ReorderStructAction"
+            text="Optimize Struct Field Order"
+            description="Reorders struct fields for optimal memory layout (minimizes alignment padding)">
+            <keyboard-shortcut first-keystroke="control alt R" keymap="$default" />
+            <add-to-group group-id="EditorPopupMenu" anchor="last" />
+        </action>
+        <action
+            id="StructLayoutOptimizer.ToggleLanguage"
+            class="com.riderpludgemaker.structoptimizer.ToggleLanguageAction"
+            text="Struct Optimizer: 中文/EN"
+            description="Switch plugin UI language between Chinese and English">
+            <add-to-group group-id="EditorPopupMenu" anchor="last" />
+        </action>
+    </actions>
+</idea-plugin>
